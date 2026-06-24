@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+    </title> 
+    <meta name="description" content="Découvrez toutes les marques de smartphones, services de réparation et solutions téléphoniques professionnelles">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#4F46E5",
+                        secondary: "#10B981",
+                        accent: "#F59E0B"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .phone-3d {
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateY(0deg) rotateX(10deg);
+            transition: transform 0.5s ease;
+        }
+        
+        .phone-3d:hover {
+            transform: perspective(1000px) rotateY(15deg) rotateX(5deg);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .interactive-element {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .interactive-element:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .brand-logo {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .brand-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        .repair-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .repair-card:hover {
+            border-left-color: #4F46E5;
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
+    <!-- Header avec navigation -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-2">ARE</div>
+                    <span class="text-xl font-bold text-gray-800">ARE<span class="text-primary"></span></span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="text-gray-700 hover:text-primary font-medium transition-colors">Accueil</a>
+                    <a href="#marques" class="text-gray-700 hover:text-primary font-medium transition-colors">Marques</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-primary">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-primary">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-primary">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <button class="md:hidden text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section Hero -->
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-10 md:mb-0">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-6"> Liste des meilleures offres de vétement <span class="text-accent"> </span> </h1>
+                        <p class="text-xl mb-8 opacity-90">.</p>
+                        <div class="flex space-x-4">
+                            <button class="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Nos services</button>
+                            <button class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors">Nous contacter</button>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="phone-3d floating">
+                            <img src="\\tlpu004-ppfs.tlpu004.etab.local\eleves\Ruben.Ramos\Mes documents\logo-png.png" alt="Smartphone moderne" class="w-64 rounded-3xl shadow-2xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Marques -->
+        <section id="marques" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Toutes les marques</h2>
+                <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Nous couvrons l'ensemble des marques de vétement disponibles sur le marché.</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                    <div class="brand-logo interactive-element bg-gray-100 rounded-lg p-6 flex items-center justify-center">
+                        <img src="https://www.webstickersmuraux.com/fr/img/as1281-jpg/folder/products-listado-merchanthover/stickers-muraux-logo-nike.jpg" alt="Apple" class="w-20 h-20">
+                    </div>
+                    <div class="brand-logo interactive-element bg-gray-100 rounded-lg p-6 flex items-center justify-center">
+                        <img src="https://static.vecteezy.com/ti/vecteur-libre/p1/23871238-polo-ralph-lauren-marque-logo-noir-symbole-vetements-conception-icone-abstrait-vecteur-illustration-gratuit-vectoriel.jpg" alt="Samsung" class="w-20 h-20">
+                    </div>
+                    <div class="brand-logo interactive-element bg-gray-100 rounded-lg p-6 flex items-center justify-center">
+                        <img src="https://smashbooth.net/wp-content/uploads/2015/07/2000px-Louis_Vuitton_Logo.svg_.png" alt= class="w-20 h-20">
+                    </div>
+                    <div class="brand-logo interactive-element bg-gray-100 rounded-lg p-6 flex items-center justify-center">
+                        <img src="https://passion-stickers.com/3126-large_default/stickers-under-armour.jpg" alt= class="w-20 h-20">
+                    </div>
+                    <div class="brand-logo interactive-element bg-gray-100 rounded-lg p-6 flex items-center justify-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/The_North_Face.png" alt= class="w-20 h-20">
+                    </div>
+                    <div class="brand-logo interactive-element bg-gray-100 rounded-lg p-6 flex items-center justify-center">
+                        <img src="https://cdn.freebiesupply.com/logos/large/2x/adidas-logo.png" alt= class="w-20 h-20">
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <button class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">Voir toutes les marques</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Réparations -->
+        <section id="reparations" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Vêtements</h2>
+                <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Nous couvrons l'ensemble des marques de vétement disponibles sur le marché..</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="repair-card interactive-element bg-white rounded-xl p-6 shadow-md">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-primary text-2xl mb-4">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">casquettes</h3>
+                        <p class="text-gray-600"></p>
+                        <div class="mt-4 text-primary font-semibold">À partir de 49€</div>
+                    </div>
+                    <div class="repair-card interactive-element bg-white rounded-xl p-6 shadow-md">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-secondary text-2xl mb-4">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Survêtement</h3>
+                        <p class="text-gray-600"></p>
+                        <div class="mt-4 text-primary font-semibold">À partir de 39€</div>
+                    </div>
+                    
+                    <div class="repair-card interactive-element bg-white rounded-xl p-6 shadow-md">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center text-accent text-2xl mb-4">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Doudoune</h3>
+                        <p class="text-gray-600"></p>
+                        <div class="mt-4 text-primary font-semibold">À partir de 59€</div>
+                    </div>
+                </div>
+
+        <!-- Section Entreprise -->
+        <section id="entreprise" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Notre Site Web</h2>
+                <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">ARE met à ta dispotion une sélection de vêtements stylés avec les meilleures offres et bons plans du moment,pour t'aider à trouver les looks parfaits au meilleur prix.</p>
+                
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <img src="\\tlpu004-ppfs.tlpu004.etab.local\eleves\Ruben.Ramos\Mes documents\logo-png.png" alt="Notre équipe" class="rounded-2xl shadow-lg">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-semibold mb-4">passion depuis 2025</h3>
+                        <p class="text-gray-600 mb-6">Fondée par des passionnés de vêtement autour d'une vision simple : offrir un service de qualité simple.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Contactez-nous</h2>
+                <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Nous sommes à votre disposition pour toute question ou demande de devis.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">Coordonnées</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="text-primary text-xl mr-4 mt-1"><i class="fas fa-map-marker-alt"></i></div>
+                                <div>
+                                    <h4 class="font-semibold">Adresse</h4>
+                                    <p class="text-gray-600">25 rue ayoub choua<br>01100 Oyonnax</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-primary text-xl mr-4 mt-1"><i class="fas fa-phone"></i></div>
+                                <div>
+                                    <h4 class="font-semibold">Téléphone</h4>
+                                    <p class="text-gray-600">06 36 17 51 89</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-primary text-xl mr-4 mt-1"><i class="fas fa-envelope"></i></div>
+                                <div>
+                                    <h4 class="font-semibold">Email</h4>
+                                    <p class="text-gray-600">ARE@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-primary text-xl mr-4 mt-1"><i class="fas fa-clock"></i></div>
+                                <div>
+                                    <h4 class="font-semibold">Horaires</h4>
+                                    <p class="text-gray-600">Lun-Ven: 9h-19h<br></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-semibold mb-4">Suivez-nous</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white hover:bg-purple-700 transition-colors">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white hover:bg-purple-700 transition-colors">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white hover:bg-purple-700 transition-colors">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">Envoyez-nous un message</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">Envoyer le message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-2">are</div>
+                        <span class="text-xl font-bold">are<span class="text-primary"></span></span>
+                    </div>
+                    <p class="text-gray-400"></p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4"></h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors"></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors"></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors"></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors"></a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#accueil" class="text-gray-400 hover:text-white transition-colors">Accueil</a></li>
+                        <li><a href="#marques" class="text-gray-400 hover:text-white transition-colors">Marques</a></li>
+                        <li><a href="#reparations" class="text-gray-400 hover:text-white transition-colors"></a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Inscrivez-vous pour recevoir nos actualités et promotions.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Votre email" class="px-4 py-2 bg-gray-700 text-white rounded-l-lg focus:outline-none w-full">
+                        <button type="submit" class="bg-primary px-4 py-2 rounded-r-lg hover:bg-purple-700 transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+                <p class="text-gray-400"></p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Navigation smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Interactive 3D elements
+        const interactiveElements = document.querySelectorAll('.interactive-element');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const angleY = (x - centerX) / 25;
+                const angleX = (centerY - y) / 25;
+                
+                this.style.transform = `perspective(1000px) rotateY(${angleY}deg) rotateX(${angleX}deg) scale(1.05)`;
+            });
+            
+            el.addEventListener('mouseleave', function() {
+                this.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1)';
+            });
+        });
+        
+        // Form validation
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const nameInput = document.getElementById('name');
+                const emailInput = document.getElementById('email');
+                const messageInput = document.getElementById('message');
+                
+                let isValid = true;
+                
+                if (!nameInput.value.trim()) {
+                    nameInput.style.borderColor = 'red';
+                    isValid = false;
+                } else {
+                    nameInput.style.borderColor = '';
+                }
+                
+                if (!emailInput.value.trim() || !emailInput.value.includes('@')) {
+                    emailInput.style.borderColor = 'red';
+                    isValid = false;
+                } else {
+                    emailInput.style.borderColor = '';
+                }
+                
+                if (!messageInput.value.trim()) {
+                    messageInput.style.borderColor = 'red';
+                    isValid = false;
+                } else {
+                    messageInput.style.borderColor = '';
+                }
+                
+                if (isValid) {
+                    alert('Merci pour votre message ! Nous vous répondrons rapidement.');
+                    this.reset();
+                }
+            });
+        }
+        
+        // Brand logos animation
+        const brandLogos = document.querySelectorAll('.brand-logo');
+        brandLogos.forEach((logo, index) => {
+            logo.style.animationDelay = `${index * 0.1}s`;
+        });
+    </script>
+</body>
+</html>
